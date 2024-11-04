@@ -20,6 +20,7 @@ public class StudentController {
     public ResponseEntity<UserDto> createStudent(@RequestBody UserDto userDto) {
 
 
+
         UserDto savedUserDto = this.studentService.saveStudent(userDto);
         return ResponseEntity.ok(savedUserDto);
     }
@@ -33,7 +34,7 @@ public class StudentController {
     public ResponseEntity<String> deleteStudent(@PathVariable String id) {
         try {
 
-
+String name="";
 
             String response = studentService.deleteStudentById(id);
             return ResponseEntity.ok(response);
