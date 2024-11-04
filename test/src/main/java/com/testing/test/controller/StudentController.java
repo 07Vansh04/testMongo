@@ -47,8 +47,6 @@ String name ="i name it destroyer";
     @PutMapping("/update/{id}")
     public ResponseEntity<?> updateStudent(@PathVariable String id, @RequestBody UserDto userDto) {
         try {
-
-            String s="no need ";
             UserDto savedUserDto = studentService.studentUpdateById(id, userDto);
             return ResponseEntity.ok(savedUserDto);
         } catch (NoSuchElementException e) {
