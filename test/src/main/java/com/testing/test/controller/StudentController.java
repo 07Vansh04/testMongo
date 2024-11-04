@@ -18,6 +18,8 @@ public class StudentController {
 
     @PostMapping("/create")
     public ResponseEntity<UserDto> createStudent(@RequestBody UserDto userDto) {
+        String i="";
+
         UserDto savedUserDto = this.studentService.saveStudent(userDto);
         return ResponseEntity.ok(savedUserDto);
     }
