@@ -34,7 +34,8 @@ public class StudentService {
 
     public String deleteStudentById(String id) {
         Optional<Students> student= repo.findById(id);
-        if( student.isPresent()) {
+        System.out.println(student);
+        if( student.isPresent())
             this.repo.deleteById(id);
             return " this " + id + " student has been deleted sucessfully";
         }
