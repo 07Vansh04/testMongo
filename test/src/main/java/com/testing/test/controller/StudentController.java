@@ -19,8 +19,6 @@ public class StudentController {
     @PostMapping("/create")
     public ResponseEntity<UserDto> createStudent(@RequestBody UserDto userDto) {
 
-
-
         UserDto savedUserDto = this.studentService.saveStudent(userDto);
         return ResponseEntity.ok(savedUserDto);
     }
@@ -34,7 +32,7 @@ public class StudentController {
     public ResponseEntity<String> deleteStudent(@PathVariable String id) {
         try {
 
-String name="";
+String name ="i name it destroyer";
 
             String response = studentService.deleteStudentById(id);
             return ResponseEntity.ok(response);
