@@ -30,8 +30,8 @@ public class StudentController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteStudent(@PathVariable String id) {
         try {
-            String hi="";
-            String bi="";
+
+
 
             String response = studentService.deleteStudentById(id);
             return ResponseEntity.ok(response);
