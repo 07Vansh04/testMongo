@@ -19,6 +19,8 @@ public class StudentController {
     @PostMapping("/create")
     public ResponseEntity<UserDto> createStudent(@RequestBody UserDto userDto) {
 
+
+
         UserDto savedUserDto = this.studentService.saveStudent(userDto);
         return ResponseEntity.ok(savedUserDto);
     }
@@ -32,7 +34,7 @@ public class StudentController {
     public ResponseEntity<String> deleteStudent(@PathVariable String id) {
         try {
 
-String name ="i name it destroyer";
+
 
             String response = studentService.deleteStudentById(id);
             return ResponseEntity.ok(response);
@@ -47,8 +49,6 @@ String name ="i name it destroyer";
     @PutMapping("/update/{id}")
     public ResponseEntity<?> updateStudent(@PathVariable String id, @RequestBody UserDto userDto) {
         try {
-
-            String s="no need ";
             UserDto savedUserDto = studentService.studentUpdateById(id, userDto);
             return ResponseEntity.ok(savedUserDto);
         } catch (NoSuchElementException e) {
